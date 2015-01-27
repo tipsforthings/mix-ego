@@ -1,0 +1,61 @@
+<div id="sidebar-wrapper">
+  <ul class="sidebar-nav">
+    <li class="toggle-menu">
+      <a class="show-me menu-toggle" id="menu-toggle">
+        <i class="fi-arrow-left" alt="Menu Toggle" style="text-align: right; width: 100%;"></i>
+        <span class="fi-arrow-right" alt="Menu Toggle"></span>
+      </a>
+    </li>
+    <li class="sidebar-brand">
+      ALXS Design
+    </li>
+    <li>
+      <%= link_to root_path do %>Home<span class="fi-home" alt="Dashboard"></span><% end %>
+    </li>
+    <li>
+      <%= link_to about_path do %>About<span class="foundicon-website" alt="About"></span><% end %>
+    </li>
+    <li>
+      <%= link_to projects_path do %>Projects<span class="fi-folder" alt="Projects"></span><% end %>
+    </li>
+    <% if logged_in? %>
+    <br />
+    <li>
+      <%= link_to new_article_path do %>New Article<span class="fi-add-doc" alt="New Article"></span><% end %>
+    </li>
+    <li>
+      <%= link_to "Edit Password", edit_user_path(current_user) %>
+    </li>
+    <li>
+      <%= link_to "Logout", logout_path %>
+    </li>
+    <% else %>
+    <br />
+    <li>
+      <%= link_to "Login", login_path(@user, :format => :js), :remote => true, class: 'login-link' %>
+    </li>
+    <li>
+      <%= link_to "Register", register_path %>
+    </li>
+    <% end %>
+    <li>
+    <div class="navigation-padding"></div>
+    </li>
+    <li class="hide-me">
+      <a href="https://www.facebook.com/alxsdesign" target="_blank">Facebook<span class="fi fi-social-facebook"></span></a>
+    </li>
+    <li class="hide-me">
+      <a href="https://github.com/tipsforthings" target="_blank">Github<span class="fi fi-social-github"></span></a>
+    </li>
+    <li class="hide-me">
+      <a href="https://plus.google.com/u/0/116471654573031381012/posts/p/pub" target="_blank">Google+<span class="fi fi-social-google-plus"></span></a>
+    </li>
+    <li class="hide-me">
+      <a href="https://twitter.com/alxsdesign" target="_blank">Twitter<span class="fi fi-social-twitter"></span></a>
+    </li>
+
+  </ul>
+</div>
+
+
+

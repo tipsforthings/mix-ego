@@ -1,9 +1,9 @@
 *.sqlite3
 /config/database.yml
 /config/secrets.yml
-log/*
-tmp/*
-public/assets/*
+/log/*
+/tmp/*
+/public/assets/*
 *~
 *.lock
 *.DS_Store

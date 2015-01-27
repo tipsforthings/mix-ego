@@ -1,14 +1,56 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Mixego</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfolio of ALXS Design featuring 2 new responsive navigation templates using Zurb Foundation framework. The templates are available for demonstration and free download.">
+    <meta name="keywords" content="ALXS Design, Zurb Foundation, Responsive Design, Responsive Navigation">
+    <meta name="author" content="Alex Scott">
+    <meta property="og:url" content="http://alxs.co.uk/" />
+    <meta property="og:image" content="http://alxs.co.uk/assets/cover2.png" >
+    <meta property="og:description" content="Portfolio of ALXS Design featuring 2 new responsive navigation templates using Zurb Foundation framework. The templates are available for demonstration and free download.">
+    <meta property="og:title" content="ALXS Design">
+    <meta property="og:type" content="website" />
+    <title><%= content_for?(:title) ? yield(:title) : "ALXS Design" %></title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Roboto+Condensed%3A400%2C300%2C300italic%2C400italic%2C700%2C700italic&#038;ver=3.9.3' type='text/css' media='all' />
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Roboto%3A400%2C300%2C700&#038;ver=3.9.3' type='text/css' media='all' />
+    <%= render 'layouts/favicon' %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
 </head>
-<body>
+  <body class="custom-background">
+    <%= render 'layouts/navigation' %>
+      <div id="wrapper">
+      <div id="background"></div>
+      <div id="overlay"></div>
+<div id="content-wrapper">
+    <div id="header">
+      <div id="user_bar">
 
-<%= yield %>
+      </div>
+    </div>
+    <div id="main">
+      <%= content_tag(:p, notice, class: 'notice') if notice.present? %>
+      <%= content_tag(:p, alert, class: 'alert') if alert.present? %>
+      <%= yield %>
+      
+    </div>
+    <div id="footer">
+      
+    </div>
 
-</body>
+</div>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+      <%= render 'layouts/social' %>
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>

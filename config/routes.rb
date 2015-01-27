@@ -1,4 +1,24 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+  match '/zurbsidebar',        to: 'projects#zurb_sidebar',               via: 'get'
+  match '/column-navigation',        to: 'projects#column_navigation',                via: 'get'
+  match '/projects',      to: 'projects#index',              via: 'get'
+  match '/about',        to: 'main#about',                via: 'get'
+  match '/help',      to: 'main#help',              via: 'get'
+  match '/register',  to: 'users#new',              via: 'get'
+  root :to => "main#home"
+  resources :articles do
+    member do
+      post :notify_friend
+    end
+    resources :comments
+  end
+  resources :users
+  resource :session, :only => [:new, :create, :destroy]
+  get '/login' => "sessions#new", :as => "login"
+  get '/logout' => "sessions#destroy", :as => "logout"
+
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

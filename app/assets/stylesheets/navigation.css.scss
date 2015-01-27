@@ -1,0 +1,117 @@
+	
+#sidebar-wrapper {
+  z-index: 1;
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.4);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 300px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sidebar-nav input {
+  margin-left: 20px;
+}
+.fi-folder { 
+  margin-right: -45px;
+}
+.foundicon-website {
+  margin-right: -2px;
+}
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  font-size: 18px;
+  line-height: 60px;
+}
+.sidebar-nav > .sidebar-brand a,
+.toggle-menu a,
+.toggle-menu span {
+	color: #999;
+}
+.sidebar-nav > .sidebar-brand a:hover,
+.toggle-menu a:hover,
+.toggle-menu a:active,
+.toggle-menu span:hover {
+  color: #999 !important;
+  background: transparent !important;
+}
+.sidebar-nav li {
+  text-indent: 20px;
+  line-height: 40px;
+}
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+	color: #732C7B;
+}
+.sidebar-nav li a span {
+  display: block;
+  text-decoration: none;
+	color: #732C7B;
+  float: right;
+  padding-right: 10px;
+}
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  background: rgba(255,255,255,0.1);
+}
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus,
+.sidebar-nav li a:active span,
+.sidebar-nav li a:focus span {
+  text-decoration: none;
+}
+.sidebar-nav li a:hover span {
+  text-decoration: none;
+  background: rgba(0,0,0,0);
+}
+#wrapper.toggled #sidebar-wrapper {
+  width: 250px;
+}
+.sidebar-nav.toggled {
+  margin-left: 0px;
+}
+#sidebar-wrapper.toggled {
+  margin-left: 0px;
+  z-index: 1000;
+}
+#sidebar-wrapper.toggled .sidebar-nav li a:hover span {
+  text-decoration: none;
+  color: #fff;
+  background: transparent;
+}
+.navigation-padding {
+  height: 15vh;
+}
+@media (max-width:768px) {
+  #sidebar-wrapper {
+    margin-left: -215px;
+  }
+  .sidebar-nav {
+    margin-left: -50px;
+  }
+  .sidebar-nav > .sidebar-brand {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+}
+
+@media (min-width:768px) {
+  .menu-toggle {
+    visibility: hidden;
+    display: none;
+    height: 0px;
+    margin-bottom: 0px;
+  }
+}
